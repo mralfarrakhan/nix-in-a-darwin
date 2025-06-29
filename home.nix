@@ -4,9 +4,11 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
+    bat
     helix
     go
-    vscode
+    # vscode
+    postman
     iterm2
     starship
     git-credential-oauth
@@ -16,6 +18,10 @@
 
   programs.starship = {
     enable = true;
+  };
+
+  home.file = {
+    ".zshrc".source = dotfiles/.zshrc;
   };
 
   programs.home-manager.enable = true;
