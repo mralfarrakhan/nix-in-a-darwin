@@ -39,7 +39,7 @@
       programs.zsh.enable = true;
 
       # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+      # system.configurationRevision = self.rev or self.dirtyRev or null;
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
@@ -49,4 +49,13 @@
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       nix.channel.enable = false;
+
+      nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+        "vscode"
+      ];
+
+      users.users.splinter = {
+        name = "splinter";
+        home = "/Users/splinter";
+      };
     }

@@ -15,11 +15,18 @@
     };
   };
 
-  outputs = inputs@{ nix-darwin, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
+  let
+    revisionCfg = { pkgs, ... }: {
+      system.configurationRevision = self.rev or self.dirtyRev or null;
+    };
+  in
+  {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#NB-MuhammadRafky-Tech
     darwinConfigurations."NB-MuhammadRafky-Tech" = nix-darwin.lib.darwinSystem {
       modules = [
+        revisionCfg
         ./configuration.nix
         home-manager.darwinModules.home-manager
         {
