@@ -21,15 +21,8 @@
         vscode
         iterm2
         starship
+        git-credential-oauth
       ];
-
-      # homebrew = {
-      #   enable = true;
-      #   onActivation.cleanup = "zap";
-      #   taps = [];
-      #   brews = [];
-      #   casks = [];
-      # };
 
       fonts.packages = [
         (pkgs.nerdfonts.override { fonts = [ "GeistMono" ]; })
