@@ -22,6 +22,8 @@
         iterm2
         starship
         git-credential-oauth
+        podman
+        podman-compose
       ];
 
       fonts.packages = [
