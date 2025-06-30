@@ -9,6 +9,8 @@
         wget
       ];
 
+      services.nix-daemon.enable = true;
+      
       fonts.packages = [
         (pkgs.nerdfonts.override { fonts = [ "GeistMono" ]; })
       ];

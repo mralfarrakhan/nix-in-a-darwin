@@ -26,9 +26,23 @@
   ];
 
   home.file = {
-    ".zshrc".source = ./dotfiles/.zshrc;
-    ".config/helix/config.toml".source = ./dotfiles/.config/helix/config.toml;
+    # ".zshrc".source = ./dotfiles/.zshrc;
+    # ".config/helix/config.toml".source = ./dotfiles/.config/helix/config.toml;
   };
 
   programs.home-manager.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+  };
+
+  programs.starship.enable = true;
+
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "gruvbox_dark_soft";
+    };
+  };
 }
