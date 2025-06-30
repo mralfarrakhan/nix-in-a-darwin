@@ -12,10 +12,8 @@
     starship
     git-credential-oauth
     
-    # go
+    # programming
     go
-    delve
-    gopls
 
     # GUI
     vscode
@@ -27,12 +25,9 @@
     podman-compose
   ];
 
-  programs.starship = {
-    enable = true;
-  };
-
   home.file = {
-    ".zshrc".source = dotfiles/.zshrc;
+    ".zshrc".source = ./dotfiles/.zshrc;
+    ".config/helix/config.toml".source = ./dotfiles/.config/helix/config.toml;
   };
 
   programs.home-manager.enable = true;
