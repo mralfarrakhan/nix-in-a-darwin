@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, ... }:
 
 {
   home.stateVersion = "24.11";
@@ -11,11 +11,9 @@
 
     # indirect
     starship
-    git-credential-oauth
     
     # programming
     go
-    nixd
 
     # GUI
     vscode
@@ -31,6 +29,10 @@
   home.file = {
     # ".zshrc".source = ./dotfiles/.zshrc;
     # ".config/helix/config.toml".source = ./dotfiles/.config/helix/config.toml;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "hx";    
   };
 
   programs.home-manager.enable = true;

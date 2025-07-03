@@ -17,9 +17,9 @@
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, ... }:
+  outputs = { self, nix-darwin,  home-manager, mac-app-util, ... }:
   let
-    revisionCfg = { pkgs, ... }: {
+    revisionCfg = { ... }: {
       system.configurationRevision = self.rev or self.dirtyRev or null;
     };
   in
@@ -35,7 +35,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.splinter = { pkgs, lib, ... }: {
+          home-manager.users.splinter = { ... }: {
             imports = [
               ./home.nix
               mac-app-util.homeManagerModules.default
