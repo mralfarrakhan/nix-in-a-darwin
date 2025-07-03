@@ -7,6 +7,7 @@
     # basic
     bat
     helix
+    ripgrep
 
     # indirect
     starship
@@ -14,11 +15,13 @@
     
     # programming
     go
+    nixd
 
     # GUI
     vscode
     postman
     iterm2
+    zed-editor
 
     # podman
     podman
@@ -35,6 +38,9 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
+    shellAliases = {
+      zd = "zeditor";
+    };
   };
 
   programs.starship.enable = true;
