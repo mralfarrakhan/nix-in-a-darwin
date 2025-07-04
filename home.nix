@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
     # basic
@@ -14,6 +14,8 @@
     
     # programming
     go
+    gcc
+    clang-tools
 
     # GUI
     vscode

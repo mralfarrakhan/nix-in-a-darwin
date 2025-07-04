@@ -7,12 +7,7 @@
         vim
         git
         wget
-      ];
-
-      services.nix-daemon.enable = true;
-      
-      fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = [ "GeistMono" ]; })
+        nerd-fonts.geist-mono
       ];
             
       # Necessary for using flakes on this system.
