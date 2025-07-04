@@ -23,9 +23,12 @@
     iterm2
     zed-editor
 
-    # podman
+    # virtualization
     podman
     podman-compose
+
+    # etc.
+    nerd-fonts.geist-mono
   ];
 
   home.file = {
