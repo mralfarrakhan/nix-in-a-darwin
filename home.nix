@@ -16,6 +16,7 @@
     go
     gcc
     clang-tools
+    nil
 
     # GUI
     vscode
