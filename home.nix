@@ -8,6 +8,7 @@
     bat
     helix
     ripgrep
+    just
 
     # indirect
     starship
@@ -47,6 +48,7 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       zd = "zeditor";
     };
