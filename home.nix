@@ -10,6 +10,7 @@
     ripgrep
     just
     zellij
+    eza
 
     # indirect
     starship
@@ -23,7 +24,6 @@
     # GUI
     vscode
     postman
-    iterm2
     zed-editor
 
     # virtualization
@@ -52,6 +52,7 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       zd = "zeditor";
+      ls = "eza";
     };
   };
 
@@ -61,24 +62,6 @@
     enable = true;
     settings = {
       theme = "gruvbox_dark_soft";
-    };
-  };
-
-  programs.alacritty = {
-    enable = true;
-    theme = "gruvbox_dark";
-    settings = {
-      window = {
-        opacity = 0.85;
-        blur = true;
-      };
-      font = {
-        normal = {
-          family = "GeistMono Nerd Font Mono";
-          style = "Regular";
-        };
-        size = 13;
-      };
     };
   };
 }
