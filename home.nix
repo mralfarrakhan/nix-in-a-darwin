@@ -9,10 +9,11 @@
     helix
     ripgrep
     just
+    zellij
 
     # indirect
     starship
-    
+
     # programming
     go
     gcc
@@ -40,7 +41,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "hx";    
+    EDITOR = "hx";
   };
 
   programs.home-manager.enable = true;
@@ -60,6 +61,24 @@
     enable = true;
     settings = {
       theme = "gruvbox_dark_soft";
+    };
+  };
+
+  programs.alacritty = {
+    enable = true;
+    theme = "gruvbox_dark";
+    settings = {
+      window = {
+        opacity = 0.85;
+        blur = true;
+      };
+      font = {
+        normal = {
+          family = "GeistMono Nerd Font Mono";
+          style = "Regular";
+        };
+        size = 13;
+      };
     };
   };
 }

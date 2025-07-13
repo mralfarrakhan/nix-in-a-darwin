@@ -29,7 +29,7 @@
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = { self, nix-darwin,  home-manager, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask,... }:
+  outputs = { self, nix-darwin, home-manager, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask, ... }:
   let
     revisionCfg = { ... }: {
       system.configurationRevision = self.rev or self.dirtyRev or null;
