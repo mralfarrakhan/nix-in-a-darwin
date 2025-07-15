@@ -34,4 +34,10 @@
         name = "splinter";
         home = "/Users/splinter";
       };
+
+      services.tailscale.enable = true;
+
+      nix.settings.trusted-users = [
+        "splinter"
+      ];
     }

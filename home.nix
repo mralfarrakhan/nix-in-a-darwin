@@ -11,6 +11,8 @@
     just
     zellij
     eza
+    devenv
+    delta
 
     # indirect
     starship
@@ -20,6 +22,7 @@
     gcc
     clang-tools
     nil
+    uv
 
     # GUI
     vscode
@@ -61,7 +64,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "gruvbox_dark_soft";
+      theme = "catppuccin_frappe";
     };
   };
 }
