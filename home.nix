@@ -23,6 +23,8 @@
     clang-tools
     nil
     uv
+    gopls
+    bun
 
     # GUI
     vscode
@@ -36,6 +38,10 @@
 
     # etc.
     nerd-fonts.geist-mono
+
+    # other tools
+    google-cloud-sdk
+    kafkactl
   ];
 
   home.file = {
