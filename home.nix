@@ -25,11 +25,14 @@
     uv
     gopls
     bun
+    delve
+    mockgen
 
     # GUI
     vscode
     postman
     zed-editor
+    mongodb-compass
 
     # virtualization
     podman
