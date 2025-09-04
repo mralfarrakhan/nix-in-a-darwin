@@ -33,6 +33,7 @@
     postman
     zed-editor
     mongodb-compass
+    dbeaver-bin
 
     # virtualization
     podman
