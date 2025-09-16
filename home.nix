@@ -27,6 +27,7 @@
     bun
     delve
     mockgen
+    go-mockery
 
     # GUI
     vscode

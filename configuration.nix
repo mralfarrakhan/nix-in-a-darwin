@@ -9,6 +9,14 @@
         wget
       ];
 
+      homebrew = {
+        enable = true;
+        onActivation.cleanup = "zap";
+        taps = [];
+        brews = [];
+        casks = [ "ghostty" ];
+      };
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
