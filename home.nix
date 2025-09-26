@@ -39,7 +39,6 @@
     # virtualization
     podman
     podman-compose
-    utm
 
     # etc.
     nerd-fonts.geist-mono

@@ -13,7 +13,7 @@
         enable = true;
         onActivation.cleanup = "zap";
         taps = [];
-        brews = [];
+        brews = [ "krakend" ];
         casks = [ "ghostty" ];
       };
 
