@@ -13,6 +13,10 @@
     eza
     devenv
     delta
+    difftastic
+    mergiraf
+    zoxide
+    rizin
 
     # indirect
     starship
@@ -28,6 +32,7 @@
     delve
     mockgen
     go-mockery
+    nodejs_24
 
     # GUI
     vscode
@@ -64,7 +69,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      zd = "zeditor";
+      zed = "zeditor";
       ls = "eza";
     };
   };
@@ -76,5 +81,10 @@
     settings = {
       theme = "catppuccin_frappe";
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

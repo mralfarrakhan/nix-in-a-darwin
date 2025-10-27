@@ -14,7 +14,7 @@
         onActivation.cleanup = "zap";
         taps = [];
         brews = [ "krakend" ];
-        casks = [ "ghostty" ];
+        casks = [ "ghostty" "obsidian" ];
       };
 
       nix.settings.experimental-features = "nix-command flakes";
