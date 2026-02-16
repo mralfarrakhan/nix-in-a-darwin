@@ -17,6 +17,10 @@
     mergiraf
     zoxide
     rizin
+    kalker
+    cloudflared
+    hyperfine
+    tre-command
 
     # indirect
     starship
@@ -37,7 +41,6 @@
     # GUI
     vscode
     postman
-    zed-editor
     mongodb-compass
     dbeaver-bin
 
@@ -51,6 +54,7 @@
     # other tools
     google-cloud-sdk
     kafkactl
+    xquartz
   ];
 
   home.file = {
@@ -69,7 +73,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      zed = "zeditor";
+      # zed = "zeditor";
       ls = "eza";
     };
   };

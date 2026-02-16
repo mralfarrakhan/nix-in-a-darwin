@@ -13,8 +13,15 @@
         enable = true;
         onActivation.cleanup = "zap";
         taps = [];
-        brews = [ "krakend" ];
-        casks = [ "ghostty" "obsidian" ];
+        brews = [
+          "krakend"
+        ];
+        casks = [
+          "ghostty"
+          "obsidian"
+          "maccy"
+          "vlc"
+        ];
       };
 
       nix.settings.experimental-features = "nix-command flakes";
@@ -36,7 +43,7 @@
 
       system.primaryUser = "splinter";
 
-      services.tailscale.enable = true;
+      # services.tailscale.enable = true;
 
       nix.settings.trusted-users = [
         "splinter"
