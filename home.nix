@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
     # basic
@@ -57,7 +57,6 @@
     # other tools
     google-cloud-sdk
     kafkactl
-    xquartz
   ];
 
   home.file = {
