@@ -37,6 +37,9 @@
     mockgen
     go-mockery
     nodejs_24
+    typescript-language-server
+    astro-language-server
+    revive
 
     # GUI
     vscode
@@ -66,6 +69,10 @@
     EDITOR = "hx";
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+  
   programs.home-manager.enable = true;
 
   programs.zsh = {
@@ -83,7 +90,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "catppuccin_frappe";
+      theme = "gruvbox-material";
     };
   };
 
