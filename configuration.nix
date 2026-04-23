@@ -18,7 +18,6 @@
         ];
         casks = [
           "ghostty"
-          "obsidian"
           "maccy"
           "vlc"
         ];

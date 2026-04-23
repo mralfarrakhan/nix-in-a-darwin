@@ -27,19 +27,20 @@
 
     # programming
     go
-    gcc
-    clang-tools
+    # gcc
+    # clang-tools
     nil
     uv
-    gopls
     bun
-    delve
-    mockgen
-    go-mockery
-    nodejs_24
     typescript-language-server
     astro-language-server
-    revive
+    rustup
+    coursier
+    tflint
+    pre-commit
+    opentofu
+    dbmate
+    
 
     # GUI
     vscode
@@ -70,6 +71,7 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$HOME/go/bin"
   ];
   
   programs.home-manager.enable = true;
