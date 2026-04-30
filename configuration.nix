@@ -15,6 +15,7 @@
         taps = [];
         brews = [
           "krakend"
+          "node"
         ];
         casks = [
           "ghostty"

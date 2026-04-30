@@ -39,8 +39,7 @@
     tflint
     pre-commit
     opentofu
-    dbmate
-    
+    dbmate    
 
     # GUI
     vscode
