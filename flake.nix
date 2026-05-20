@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    determinate = {
+      url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +34,7 @@
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = { self, nix-darwin, home-manager, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask, ... }:
+  outputs = { self, nix-darwin, home-manager, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask, determinate, ... }:
   let
     revisionCfg = { ... }: {
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -56,26 +61,27 @@
         }
         nix-homebrew.darwinModules.nix-homebrew
         {
-            nix-homebrew = {
-            # Install Homebrew under the default prefix
+          nix-homebrew = {
             enable = true;
-
-            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
             enableRosetta = true;
-
-            # User owning the Homebrew prefix
             user = "splinter";
-
-            # Optional: Declarative tap management
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
             };
-
-            # Optional: Enable fully-declarative tap management
-            #
-            # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
             mutableTaps = false;
+          };
+        }
+        determinate.darwinModules.default
+        {
+          determinateNix = {
+              enable = true;
+              customSettings = {
+                eval-cores = 0;
+                extra-experimental-features = [
+                  "build-time-fetch-tree" # Enables build-time flake inputs
+                ];
+              };
           };
         }
       ];

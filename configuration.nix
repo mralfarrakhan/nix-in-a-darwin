@@ -16,6 +16,7 @@
         brews = [
           "krakend"
           "node"
+          "lisette"
         ];
         casks = [
           "ghostty"
@@ -48,4 +49,6 @@
       nix.settings.trusted-users = [
         "splinter"
       ];
+
+      nix.enable = false;
     }

@@ -39,13 +39,12 @@
     tflint
     pre-commit
     opentofu
-    dbmate    
+    dbmate
 
     # GUI
     vscode
     postman
     mongodb-compass
-    dbeaver-bin
 
     # virtualization
     podman
@@ -72,7 +71,7 @@
     "$HOME/.local/bin"
     "$HOME/go/bin"
   ];
-  
+
   programs.home-manager.enable = true;
 
   programs.zsh = {
@@ -98,4 +97,6 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  nix.package = null;
 }
