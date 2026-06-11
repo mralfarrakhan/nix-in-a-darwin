@@ -21,6 +21,8 @@
     cloudflared
     hyperfine
     tre-command
+    ffmpeg
+    yazi
 
     # indirect
     starship
@@ -31,7 +33,6 @@
     # clang-tools
     nil
     uv
-    bun
     typescript-language-server
     astro-language-server
     rustup
@@ -40,10 +41,10 @@
     pre-commit
     opentofu
     dbmate
+    maven
 
     # GUI
     vscode
-    postman
     mongodb-compass
 
     # virtualization
@@ -70,6 +71,7 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/go/bin"
+    "$HOME/.bun/bin"
   ];
 
   programs.home-manager.enable = true;
