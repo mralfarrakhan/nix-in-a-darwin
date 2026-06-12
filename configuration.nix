@@ -25,8 +25,6 @@
         ];
       };
 
-      nix.settings.experimental-features = "nix-command flakes";
-
       programs.zsh.enable = true;
 
       system.stateVersion = 5;
@@ -45,10 +43,6 @@
       system.primaryUser = "splinter";
 
       # services.tailscale.enable = true;
-
-      nix.settings.trusted-users = [
-        "splinter"
-      ];
 
       nix.enable = false;
     }

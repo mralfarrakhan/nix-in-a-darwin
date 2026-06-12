@@ -9,10 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    determinate = {
-      url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -75,13 +72,12 @@
         determinate.darwinModules.default
         {
           determinateNix = {
-              enable = true;
-              customSettings = {
-                eval-cores = 0;
-                extra-experimental-features = [
-                  "build-time-fetch-tree" # Enables build-time flake inputs
-                ];
-              };
+            enable = true;
+            customSettings = {
+              eval-cores = 0;
+              trusted-users = [ "splinter" ];
+              extra-experimental-features = [ "build-time-fetch-tree" ];
+            };
           };
         }
       ];
