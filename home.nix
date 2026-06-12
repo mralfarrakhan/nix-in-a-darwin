@@ -111,6 +111,7 @@
       window = {
         startup_mode = "Maximized";
         blur = true;
+        option_as_alt = "OnlyLeft";
       };
       font = {
         normal.family = "GeistMono Nerd Font Mono";
@@ -136,6 +137,26 @@
           key = "RBracket";
           mods = "Command";
           action = "ReceiveChar";
+        }
+        {
+          key = "Back";
+          mods = "Alt";
+          chars = "\\u001b\\u007f";
+        }
+        {
+          key = "Back";
+          mods = "Command";
+          chars = "\\u0015";
+        }
+        {
+          key = "Left";
+          mods = "Command";
+          chars = "\\u0001";
+        }
+        {
+          key = "Right";
+          mods = "Command";
+          chars = "\\u0005";
         }
       ];
     };
