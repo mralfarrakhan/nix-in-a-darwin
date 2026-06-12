@@ -150,13 +150,13 @@
         }
         {
           key = "Left";
-          mods = "Command";
-          chars = "\\u0001";
+          mods = "Alt";
+          chars = "\\u001bb";
         }
         {
           key = "Right";
-          mods = "Command";
-          chars = "\\u0005";
+          mods = "Alt";
+          chars = "\\u001bf";
         }
       ];
     };
@@ -171,6 +171,12 @@
     extraConfig = ''
     keybinds {
       shared_except "locked" {
+        unbind "Alt Left"
+        unbind "Alt Right"
+        unbind "Alt Up"
+        unbind "Alt Down"
+        unbind "Alt f"
+        unbind "Alt b"
         bind "Super d" { NewPane "Right"; }
         bind "Super Shift d" { NewPane "Down"; }
         bind "Super Left"  { MoveFocus "Left"; }
