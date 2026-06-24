@@ -70,6 +70,7 @@
     "$HOME/.local/bin"
     "$HOME/go/bin"
     "$HOME/.bun/bin"
+    "$HOME/.cargo/bin"
   ];
 
   programs.home-manager.enable = true;
@@ -196,6 +197,7 @@
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
+    shellWrapperName = "y";
   };
 
   programs.nushell = {
