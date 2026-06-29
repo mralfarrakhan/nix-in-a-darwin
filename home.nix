@@ -83,6 +83,13 @@
       # zed = "zeditor";
       ls = "eza";
     };
+    initContent = ''
+      if [ -f /etc/nix-darwin/.env ]; then
+        set -a
+        source /etc/nix-darwin/.env
+        set +a
+      fi
+    '';
   };
 
   programs.starship.enable = true;
