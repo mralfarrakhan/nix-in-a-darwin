@@ -48,6 +48,8 @@
     # virtualization
     podman
     podman-compose
+    colima
+    kubectl
 
     # etc.
     nerd-fonts.geist-mono
