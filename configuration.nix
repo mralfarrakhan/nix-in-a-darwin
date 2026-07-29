@@ -22,6 +22,7 @@
           "ghostty"
           "maccy"
           "vlc"
+          "xquartz"
         ];
       };
 

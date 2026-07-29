@@ -46,10 +46,13 @@
     mongodb-compass
 
     # virtualization
-    podman
-    podman-compose
+    # podman
+    # podman-compose
+    # kind
+    # kubectl
+    # skaffold
     colima
-    kubectl
+    docker
 
     # etc.
     nerd-fonts.geist-mono
@@ -57,6 +60,9 @@
     # other tools
     google-cloud-sdk
     kafkactl
+
+    # networking
+    sshuttle
   ];
 
   home.file = {
