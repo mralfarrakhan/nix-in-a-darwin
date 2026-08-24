@@ -40,7 +40,7 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#NB-MuhammadRafky-Tech
-    darwinConfigurations."servo-0" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."servo-m1" = nix-darwin.lib.darwinSystem {
       modules = [
         revisionCfg
         ./configuration.nix

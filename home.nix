@@ -21,6 +21,7 @@
     hyperfine
     tre-command
     ffmpeg
+    miller
 
     # indirect
     starship
@@ -60,9 +61,13 @@
     # other tools
     google-cloud-sdk
     kafkactl
+    nmap
 
     # networking
     sshuttle
+
+    verilator
+    yosys
   ];
 
   home.file = {
