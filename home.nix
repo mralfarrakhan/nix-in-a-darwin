@@ -66,8 +66,8 @@
     # networking
     sshuttle
 
-    verilator
-    yosys
+    # misc.
+    typst
   ];
 
   home.file = {

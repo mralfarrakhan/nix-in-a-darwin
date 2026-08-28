@@ -17,6 +17,7 @@
           "krakend"
           "node"
           "lisette"
+          "openfpgaloader"
         ];
         casks = [
           "ghostty"
