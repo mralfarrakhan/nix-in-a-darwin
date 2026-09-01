@@ -22,6 +22,7 @@
     tre-command
     ffmpeg
     miller
+    bottom
 
     # indirect
     starship
