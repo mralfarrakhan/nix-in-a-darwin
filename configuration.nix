@@ -1,50 +1,51 @@
 { pkgs, ... }:
 
 {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =  with pkgs; [
-        vim
-        git
-        wget
-      ];
+  # List packages installed in system profile. To search by name, run:
+  # $ nix-env -qaP | grep wget
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    wget
+  ];
 
-      homebrew = {
-        enable = true;
-        onActivation.cleanup = "zap";
-        taps = [];
-        brews = [
-          "krakend"
-          "node"
-          "lisette"
-          "openfpgaloader"
-        ];
-        casks = [
-          "ghostty"
-          "maccy"
-          "vlc"
-          "xquartz"
-        ];
-      };
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";
+    taps = [ ];
+    brews = [
+      "krakend"
+      "node"
+      "lisette"
+      "openfpgaloader"
+      "arduino-cli"
+    ];
+    casks = [
+      "ghostty"
+      "maccy"
+      "vlc"
+      "xquartz"
+    ];
+  };
 
-      programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
-      system.stateVersion = 5;
+  system.stateVersion = 5;
 
-      nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
-      nix.channel.enable = false;
+  nix.channel.enable = false;
 
-      nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
-      users.users.splinter = {
-        name = "splinter";
-        home = "/Users/splinter";
-      };
+  users.users.splinter = {
+    name = "splinter";
+    home = "/Users/splinter";
+  };
 
-      system.primaryUser = "splinter";
+  system.primaryUser = "splinter";
 
-      # services.tailscale.enable = true;
+  # services.tailscale.enable = true;
 
-      nix.enable = false;
-    }
+  nix.enable = false;
+}

@@ -19,68 +19,79 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     homebrew-core = {
-        url = "github:homebrew/homebrew-core";
-        flake = false;
+      url = "github:homebrew/homebrew-core";
+      flake = false;
     };
 
     homebrew-cask = {
-        url = "github:homebrew/homebrew-cask";
-        flake = false;
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
     };
 
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = { self, nix-darwin, home-manager, mac-app-util, nix-homebrew, homebrew-core, homebrew-cask, determinate, ... }:
-  let
-    revisionCfg = { ... }: {
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-    };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#NB-MuhammadRafky-Tech
-    darwinConfigurations."servo-m1" = nix-darwin.lib.darwinSystem {
-      modules = [
-        revisionCfg
-        ./configuration.nix
-        mac-app-util.darwinModules.default
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.splinter = { ... }: {
-            imports = [
-              ./home.nix
-              mac-app-util.homeManagerModules.default
-            ];
-          };
-        }
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "splinter";
-            taps = {
-              "homebrew/homebrew-core" = homebrew-core;
-              "homebrew/homebrew-cask" = homebrew-cask;
+  outputs =
+    {
+      self,
+      nix-darwin,
+      home-manager,
+      mac-app-util,
+      nix-homebrew,
+      homebrew-core,
+      homebrew-cask,
+      determinate,
+      ...
+    }:
+    let
+      revisionCfg = { ... }: {
+        system.configurationRevision = self.rev or self.dirtyRev or null;
+      };
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#NB-MuhammadRafky-Tech
+      darwinConfigurations."servo-m1" = nix-darwin.lib.darwinSystem {
+        modules = [
+          revisionCfg
+          ./configuration.nix
+          mac-app-util.darwinModules.default
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.splinter = { ... }: {
+              imports = [
+                ./home.nix
+                mac-app-util.homeManagerModules.default
+              ];
             };
-            mutableTaps = false;
-          };
-        }
-        determinate.darwinModules.default
-        {
-          determinateNix = {
-            enable = true;
-            customSettings = {
-              eval-cores = 0;
-              trusted-users = [ "splinter" ];
-              extra-experimental-features = [ "build-time-fetch-tree" ];
+          }
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "splinter";
+              taps = {
+                "homebrew/homebrew-core" = homebrew-core;
+                "homebrew/homebrew-cask" = homebrew-cask;
+              };
+              mutableTaps = false;
             };
-          };
-        }
-      ];
+          }
+          determinate.darwinModules.default
+          {
+            determinateNix = {
+              enable = true;
+              customSettings = {
+                eval-cores = 0;
+                trusted-users = [ "splinter" ];
+                extra-experimental-features = [ "build-time-fetch-tree" ];
+              };
+            };
+          }
+        ];
+      };
     };
-  };
 }

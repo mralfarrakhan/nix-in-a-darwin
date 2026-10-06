@@ -13,7 +13,6 @@
     devenv
     delta
     difftastic
-    mergiraf
     zoxide
     rizin
     kalker
@@ -33,15 +32,11 @@
     # clang-tools
     nil
     uv
-    typescript-language-server
-    astro-language-server
     rustup
-    coursier
     tflint
     pre-commit
     opentofu
     dbmate
-    maven
 
     # GUI
     vscode
@@ -62,10 +57,6 @@
     # other tools
     google-cloud-sdk
     kafkactl
-    nmap
-
-    # networking
-    sshuttle
 
     # misc.
     typst
@@ -78,6 +69,7 @@
 
   home.sessionVariables = {
     EDITOR = "hx";
+    LIBCLANG_PATH = "/Users/splinter/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-20.1.1_20250829/esp-clang/lib";
   };
 
   home.sessionPath = [
@@ -85,6 +77,7 @@
     "$HOME/go/bin"
     "$HOME/.bun/bin"
     "$HOME/.cargo/bin"
+    "$HOME/.rustup/toolchains/esp/xtensa-esp-elf/esp-15.2.0_20250920/xtensa-esp-elf/bin"
   ];
 
   programs.home-manager.enable = true;
@@ -123,67 +116,6 @@
 
   nix.package = null;
 
-  programs.alacritty = {
-    enable = true;
-    theme = "gruvbox_material_medium_dark";
-    settings = {
-      terminal.shell = {
-        program = "/etc/profiles/per-user/splinter/bin/zellij";
-      };  
-      window = {
-        startup_mode = "Maximized";
-        blur = true;
-        option_as_alt = "OnlyLeft";
-      };
-      font = {
-        normal.family = "GeistMono Nerd Font Mono";
-        size = 14.0;
-      };
-      keyboard.bindings = [
-        {
-          key = "W";
-          mods = "Command";
-          action = "ReceiveChar";
-        }
-        {
-          key = "T";
-          mods = "Command";
-          action = "ReceiveChar";
-        }
-        {
-          key = "LBracket";
-          mods = "Command";
-          action = "ReceiveChar";
-        }
-        {
-          key = "RBracket";
-          mods = "Command";
-          action = "ReceiveChar";
-        }
-        {
-          key = "Back";
-          mods = "Alt";
-          chars = "\\u001b\\u007f";
-        }
-        {
-          key = "Back";
-          mods = "Command";
-          chars = "\\u0015";
-        }
-        {
-          key = "Left";
-          mods = "Alt";
-          chars = "\\u001bb";
-        }
-        {
-          key = "Right";
-          mods = "Alt";
-          chars = "\\u001bf";
-        }
-      ];
-    };
-  };
-
   programs.zellij = {
     enable = true;
     settings = {
@@ -191,26 +123,26 @@
       show_startup_tips = false;
     };
     extraConfig = ''
-    keybinds {
-      shared_except "locked" {
-        unbind "Alt Left"
-        unbind "Alt Right"
-        unbind "Alt Up"
-        unbind "Alt Down"
-        unbind "Alt f"
-        unbind "Alt b"
-        bind "Super d" { NewPane "Right"; }
-        bind "Super Shift d" { NewPane "Down"; }
-        bind "Super Left"  { MoveFocus "Left"; }
-        bind "Super Right" { MoveFocus "Right"; }
-        bind "Super Up"    { MoveFocus "Up"; }
-        bind "Super Down"  { MoveFocus "Down"; }
-        bind "Super w" { CloseFocus; }
-        bind "Super t" { NewTab; }
-        bind "Super [" { GoToPreviousTab; }
-        bind "Super ]" { GoToNextTab; }
+      keybinds {
+        shared_except "locked" {
+          unbind "Alt Left"
+          unbind "Alt Right"
+          unbind "Alt Up"
+          unbind "Alt Down"
+          unbind "Alt f"
+          unbind "Alt b"
+          bind "Super d" { NewPane "Right"; }
+          bind "Super Shift d" { NewPane "Down"; }
+          bind "Super Left"  { MoveFocus "Left"; }
+          bind "Super Right" { MoveFocus "Right"; }
+          bind "Super Up"    { MoveFocus "Up"; }
+          bind "Super Down"  { MoveFocus "Down"; }
+          bind "Super w" { CloseFocus; }
+          bind "Super t" { NewTab; }
+          bind "Super [" { GoToPreviousTab; }
+          bind "Super ]" { GoToNextTab; }
+        }
       }
-    }
     '';
   };
 
