@@ -163,9 +163,9 @@
     shellWrapperName = "y";
   };
 
-  programs.nushell = {
-    enable = true;
-  };
+  # programs.nushell = {
+  #   enable = true;
+  # };
 
   programs.atuin = {
     enable = true;
@@ -173,8 +173,8 @@
     enableNushellIntegration = true;
   };
 
-  programs.omniwm = {
-    enable = true;
-    settings = ./omniwm-settings.toml;
-  };
+  # programs.omniwm = {
+  #   enable = true;
+  #   settings = ./omniwm-settings.toml;
+  # };
 }
