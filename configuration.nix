@@ -15,7 +15,6 @@
     taps = [ ];
     brews = [
       "krakend"
-      "node"
       "lisette"
       "openfpgaloader"
       "arduino-cli"
@@ -46,6 +45,7 @@
   system.primaryUser = "splinter";
 
   # services.tailscale.enable = true;
+  services.netbird.enable = true;
 
   nix.enable = false;
 }

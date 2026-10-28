@@ -22,6 +22,7 @@
     ffmpeg
     miller
     bottom
+    yq
 
     # indirect
     starship
@@ -37,6 +38,7 @@
     pre-commit
     opentofu
     dbmate
+    racket
 
     # GUI
     vscode
@@ -46,7 +48,9 @@
     # podman
     # podman-compose
     # kind
-    # kubectl
+    kubectl
+    kustomize
+    kubernetes-helm
     # skaffold
     colima
     docker
@@ -60,6 +64,10 @@
 
     # misc.
     typst
+    fnm
+    k6
+    poppler-utils
+    scrcpy
   ];
 
   home.file = {
@@ -96,6 +104,8 @@
         source /etc/nix-darwin/.env
         set +a
       fi
+
+      eval "$(fnm env --use-on-cd --shell zsh)"
     '';
   };
 
@@ -161,5 +171,10 @@
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
+  };
+
+  programs.omniwm = {
+    enable = true;
+    settings = ./omniwm-settings.toml;
   };
 }
