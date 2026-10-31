@@ -19,6 +19,7 @@
       "maccy"
       "vlc"
       "xquartz"
+      "radix"
     ];
   };
 
