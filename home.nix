@@ -167,8 +167,8 @@
     enableNushellIntegration = true;
   };
 
-  # programs.omniwm = {
-  #   enable = true;
-  #   settings = ./omniwm-settings.toml;
-  # };
+  programs.omniwm = {
+    enable = true;
+    settings = ./omniwm-settings.toml;
+  };
 }
