@@ -13,12 +13,7 @@
     enable = true;
     onActivation.cleanup = "zap";
     taps = [ ];
-    brews = [
-      "krakend"
-      "lisette"
-      "openfpgaloader"
-      "arduino-cli"
-    ];
+    brews = [ ];
     casks = [
       "ghostty"
       "maccy"

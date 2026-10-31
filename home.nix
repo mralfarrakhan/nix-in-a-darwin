@@ -99,12 +99,6 @@
       ls = "eza";
     };
     initContent = ''
-      if [ -f /etc/nix-darwin/.env ]; then
-        set -a
-        source /etc/nix-darwin/.env
-        set +a
-      fi
-
       eval "$(fnm env --use-on-cd --shell zsh)"
     '';
   };
