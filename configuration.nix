@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
@@ -12,7 +12,7 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
-    taps = [ ];
+    taps = builtins.attrNames config.nix-homebrew.taps;
     brews = [ ];
     casks = [
       "ghostty"
