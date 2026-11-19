@@ -29,8 +29,6 @@
 
     # programming
     go
-    # gcc
-    # clang-tools
     nil
     uv
     rustup
@@ -38,20 +36,15 @@
     pre-commit
     opentofu
     dbmate
-    racket
 
     # GUI
     vscode
     mongodb-compass
 
     # virtualization
-    # podman
-    # podman-compose
-    # kind
     kubectl
     kustomize
     kubernetes-helm
-    # skaffold
     colima
     docker
 
@@ -68,6 +61,7 @@
     k6
     poppler-utils
     scrcpy
+    herdr
   ];
 
   home.file = {
@@ -156,10 +150,6 @@
     enableNushellIntegration = true;
     shellWrapperName = "y";
   };
-
-  # programs.nushell = {
-  #   enable = true;
-  # };
 
   programs.atuin = {
     enable = true;
